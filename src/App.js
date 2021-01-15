@@ -13,6 +13,7 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Switch>
+          <Route path="/index.html" component={Website} />
           <Route path="/" exact component={Website}></Route>
           <Route
             path="/WebsiteComponents/About"

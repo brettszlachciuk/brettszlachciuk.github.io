@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Website from "./WebsiteComponents/Website";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import About from "./WebsiteComponents/About";
+import Contact from "./WebsiteComponents/Contact";
+import PoliticDB from "./WebsiteComponents/PoliticDB";
+import Portfolio from "./WebsiteComponents/Portfolio";
+import Navigation from "./WebsiteComponents/Navigation";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navigation />
+        <Switch>
+          <Route path="/" exact component={Website}></Route>
+          <Route
+            path="/WebsiteComponents/About"
+            exact
+            component={About}
+          ></Route>
+          <Route path="/WebsiteComponents" exact component={Website}></Route>
+          <Route
+            path="/WebsiteComponents/Contact"
+            exact
+            component={Contact}
+          ></Route>
+          <Route
+            path="/WebsiteComponents/PoliticDB"
+            exact
+            component={PoliticDB}
+          ></Route>
+          <Route
+            path="/WebsiteComponents/Portfolio"
+            exact
+            component={Portfolio}
+          ></Route>
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
